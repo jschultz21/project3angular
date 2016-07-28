@@ -1,6 +1,7 @@
 
 <form class = "center" data-ng-submit="show=true">
   <h2> Find Live Music in:</h2>
+  <!-- NHO: not sure if you want to filter on every change event - maybe only on user submit  -->
   <input placeholder="Pick a city, then hit enter" type="text" data-ng-model="global.search" data-ng-change="changeUrl()"/>
 
 </form>
@@ -8,7 +9,7 @@
 <h2 class="pointer" class = "new" data-ng-click = "newShow = true">Click to add a new Gig!</h2>
 
 <form data-ng-submit="ConcertIndexViewModel.create()" data-ng-show = "newShow" class = "newShow">
-
+  <!-- NHO: loved this feature!  -->
   <p><input placeholder="Concert Name" data-ng-model="ConcertIndexViewModel.concert.title"></input> <a data-ng-click = "newArtist1 = true"> (+) artist</a><br> </p>
   <p data-ng-show = "newArtist1"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist1"></input> <a data-ng-click = "newArtist2 = true"> (+) another artist</a></p>
   <p data-ng-show = "newArtist2"> <input placeholder="Artist" data-ng-model="ConcertIndexViewModel.concert.artist2"></input> <a data-ng-click = "newArtist3 = true"> (+) another artist</a></p>
@@ -38,6 +39,7 @@
     </div>
   </div>
 
+  <!-- NHO: might recommend setting a fixed position for this board as it seems to jump around the page depending on API results  -->
   <div class = "commentBoard" class = "col-sm-3">
     <h2 class = "center"> {{global.search}} discussion board</h2>
 
